@@ -4,14 +4,16 @@ using EFCoreIntro.Models.ORM.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCoreIntro.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20201119080527_CreateAdminuserTable")]
+    partial class CreateAdminuserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,8 +32,7 @@ namespace EFCoreIntro.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -51,42 +52,6 @@ namespace EFCoreIntro.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("EFCoreIntro.Models.ORM.Entities.Department", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("FacultyID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("FacultyID");
-
-                    b.ToTable("Departments");
-                });
-
-            modelBuilder.Entity("EFCoreIntro.Models.ORM.Entities.Faculty", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Faculties");
                 });
 
             modelBuilder.Entity("EFCoreIntro.Models.ORM.Entities.Student", b =>
@@ -114,22 +79,6 @@ namespace EFCoreIntro.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("EFCoreIntro.Models.ORM.Entities.Department", b =>
-                {
-                    b.HasOne("EFCoreIntro.Models.ORM.Entities.Faculty", "Faculty")
-                        .WithMany("Departments")
-                        .HasForeignKey("FacultyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Faculty");
-                });
-
-            modelBuilder.Entity("EFCoreIntro.Models.ORM.Entities.Faculty", b =>
-                {
-                    b.Navigation("Departments");
                 });
 #pragma warning restore 612, 618
         }
