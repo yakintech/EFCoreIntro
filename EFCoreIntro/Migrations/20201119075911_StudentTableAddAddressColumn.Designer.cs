@@ -3,14 +3,16 @@ using EFCoreIntro.Models.ORM.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCoreIntro.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20201119075911_StudentTableAddAddressColumn")]
+    partial class StudentTableAddAddressColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +49,6 @@ namespace EFCoreIntro.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SurName")
