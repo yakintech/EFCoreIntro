@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model List<EFCoreIntro.Models.ORM.Entities.Student>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>EMail</td>
+            <td>Address</td>
+            <td>Phone</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.SurName</td>
+                <td>@item.EMail</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+
+
+            </tr>
+        }
+    </table>
+</body>
+</html>

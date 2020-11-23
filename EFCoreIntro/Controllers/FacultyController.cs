@@ -17,8 +17,7 @@ namespace EFCoreIntro.Controllers
             _context = context;
         }
 
-        //Faculty/Index
-
+        [HttpGet]
         public IActionResult Index()
         {
             //select * from Faculties
@@ -32,15 +31,35 @@ namespace EFCoreIntro.Controllers
             List<Faculty> faculties2 = _context.Faculties.Where(q => q.Name.Contains("a")).ToList();
 
 
-
             return View(faculties);
         }
 
 
+        [HttpGet]
         public IActionResult FacultyDetail(int id)
         {
             Faculty faculty = _context.Faculties.FirstOrDefault(q => q.ID == id);
             return View(faculty);
+        }
+
+
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Faculty faculty)
+        {
+            //Dışarıdan aldığı fakülte objesini db ye ekler
+         
+            _context.Faculties.Add(faculty);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Faculty");
+
+
         }
     }
 }

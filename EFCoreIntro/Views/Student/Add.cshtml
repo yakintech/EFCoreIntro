@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <h1>Öğrenci Ekleme Sayfası</h1>
+
+    <form action="/Student/Add" method="post">
+        <div>
+            <label>Name:</label>
+            <input type="text" name="Name" value="" />
+        </div>
+        <div>
+            <label>Surname:</label>
+            <input type="text" name="SurName" value="" />
+        </div>
+        <div>
+            <label>EMail:</label>
+            <input type="text" name="EMail" value="" />
+        </div>
+        <div>
+            <label>Address:</label>
+            <input type="text" name="Address" value="" />
+        </div>
+        <div>
+            <label>Phone:</label>
+            <input type="text" name="Phone" value="" />
+        </div>
+        <div>
+            <input type="submit" name="name" value="Kayıt" />
+        </div>
+    </form>
+</body>
+</html>
