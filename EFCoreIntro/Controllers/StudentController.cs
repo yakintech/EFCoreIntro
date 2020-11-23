@@ -20,14 +20,16 @@ namespace EFCoreIntro.Controllers
 
         public IActionResult Index()
         {
-            List<Student> studens = _context.Students.ToList();
+            List<Student> students = _context.Students.ToList();
 
-            return View(studens);
+            return View(students);
         }
         
 
         public IActionResult Add()
         {
+            ViewBag.ad = "Bilge adam";
+            ViewBag.Islemdurum = false;
             return View();
         }
 
@@ -36,7 +38,22 @@ namespace EFCoreIntro.Controllers
         {
             _context.Students.Add(student);
             _context.SaveChanges();
+            ViewBag.Islemdurum = true;
 
+            return View();
+        }
+
+
+        public IActionResult Add2()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add2(Student student)
+        {
+            _context.Students.Add(student);
+            _context.SaveChanges();
             return RedirectToAction("Index","Student");
         }
     }

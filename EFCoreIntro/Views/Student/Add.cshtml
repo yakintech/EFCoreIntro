@@ -11,16 +11,21 @@
     <title>Add</title>
 </head>
 <body>
+    
+    @if (ViewBag.Islemdurum == true)
+    {
+        <p style="color:tomato">Ekleme işlemi başarılı</p>
+    }
     <h1>Öğrenci Ekleme Sayfası</h1>
 
     <form action="/Student/Add" method="post">
         <div>
             <label>Name:</label>
-            <input type="text" name="Name" value="" />
+            <input type="text" required name="Name" value="" />
         </div>
         <div>
             <label>Surname:</label>
-            <input type="text" name="SurName" value="" />
+            <input type="text" required name="SurName" value="" />
         </div>
         <div>
             <label>EMail:</label>

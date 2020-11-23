@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model EFCoreIntro.Models.ORM.Entities.Student
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add2</title>
+</head>
+<body>
+    <form action="/Student/Add2" method="post">
+        <div>
+            @Html.LabelFor(q => q.Name)
+            @Html.TextBoxFor(q => q.Name)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.SurName)
+            @Html.TextBoxFor(q => q.SurName)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Phone)
+            @Html.TextBoxFor(q => q.Phone)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Address)
+            @Html.TextBoxFor(q => q.Address)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.EMail)
+            @Html.TextBoxFor(q => q.EMail)
+        </div>
+        <div>
+            <input type="submit" name="name" value="Gönder" />
+        </div>
+    </form>
+</body>
+</html>
