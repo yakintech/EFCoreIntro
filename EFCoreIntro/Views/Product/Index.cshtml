@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model List<EFCoreIntro.Models.ORM.Entities.Product>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Unit Price</td>
+            <td>Stock</td>
+            <td>CategoryID</td>
+            @*<td>Category Name</td>*@
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.CategoryID</td>
+                @*<td>@item.Category.Name</td>*@
+            </tr>
+        }
+    </table>
+</body>
+</html>

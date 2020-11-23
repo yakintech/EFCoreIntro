@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model EFCoreIntro.Models.ORM.Entities.Product
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <form action="/Product/Add" method="post">
+
+        <div>
+            @Html.LabelFor(q => q.Name)
+            @Html.TextBoxFor(q => q.Name)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.UnitsInStock)
+            @Html.TextBoxFor(q => q.UnitsInStock)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Price)
+            @Html.TextBoxFor(q => q.Price)
+        </div>
+
+        <div>
+            <label>Kategori:</label>
+            <select name="CategoryID">
+                @foreach (var item in ViewBag.CategoryList)
+                {
+                    <option value="@item.ID">@item.Name</option>
+                }
+            </select>
+        </div>
+       
+
+        <div>
+            <input type="submit" name="name" value="Kayıt" />
+        </div>
+    </form>
+</body>
+</html>

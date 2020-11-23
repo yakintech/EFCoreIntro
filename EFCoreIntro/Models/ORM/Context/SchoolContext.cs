@@ -19,6 +19,8 @@ namespace EFCoreIntro.Models.ORM.Context
         public DbSet<AdminUser> AdminUsers { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Category> Categories{ get; set; }
+        public DbSet<Product> Products{ get; set; }
 
     }
 }

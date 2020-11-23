@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model EFCoreIntro.Models.ORM.Entities.Category
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <h1>Kategori Ekleme Formu</h1>
+    <form action="/Category/Add" method="post">
+        <div>
+            @Html.LabelFor( q => q.Name)
+            @Html.TextBoxFor(q => q.Name)
+        </div>
+        <div>
+            <input type="submit" name="name" value="Add" />
+        </div>
+    </form>
+</body>
+</html>
