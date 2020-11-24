@@ -12,6 +12,7 @@ namespace EFCoreIntro.Models.ORM.Entities
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int UnitsInStock { get; set; }
+        public bool Isdeleted { get; set; }
 
         public int CategoryID { get; set; }
 

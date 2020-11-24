@@ -12,6 +12,20 @@
     <title>Index</title>
 </head>
 <body>
+    <div>
+        <form action="/Product/SearchProduct" method="post">
+            <label>Ad:</label>
+            <input type="text" name="name" value="" />
+            <label>Fiyat:</label>
+            <input type="text" name="minprice" value="" />
+            <label>ile</label>
+            <input type="text" name="maxprice" value="" />
+
+            <button type="submit">Ara</button>
+        </form>
+
+    </div>
+
     <table>
         <tr>
             <td>ID</td>
@@ -19,7 +33,7 @@
             <td>Unit Price</td>
             <td>Stock</td>
             <td>CategoryID</td>
-            @*<td>Category Name</td>*@
+            <td>İşlem</td>
         </tr>
         @foreach (var item in Model)
         {
@@ -29,7 +43,13 @@
                 <td>@item.Price</td>
                 <td>@item.UnitsInStock</td>
                 <td>@item.CategoryID</td>
-                @*<td>@item.Category.Name</td>*@
+                <td>
+                    <form action="/Product/Delete/" method="post">
+                        <input type="hidden" name="productid" value="@item.ID" />
+                        <button type="submit" style="background-color:tomato; color:white">Sil</button>
+                    </form>
+
+                </td>
             </tr>
         }
     </table>
