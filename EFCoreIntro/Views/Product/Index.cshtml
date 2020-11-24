@@ -44,10 +44,11 @@
                 <td>@item.UnitsInStock</td>
                 <td>@item.CategoryID</td>
                 <td>
-                    <form action="/Product/Delete/" method="post">
+                    @*<form action="/Product/Delete/" method="post">
                         <input type="hidden" name="productid" value="@item.ID" />
                         <button type="submit" style="background-color:tomato; color:white">Sil</button>
-                    </form>
+                    </form>*@
+                    <a href="/Product/Delete2/@item.ID"><button>Sil</button></a>
 
                 </td>
             </tr>

@@ -79,6 +79,16 @@ namespace EFCoreIntro.Controllers
             return RedirectToAction("Index");
 
         }
+
+
+        public IActionResult Delete2(int id)
+        {
+            Product product = _context.Products.FirstOrDefault(x => x.ID == id);
+            product.Isdeleted = true;
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }   
     }
 
 }
