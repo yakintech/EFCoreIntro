@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 namespace EFCoreIntro.Models.ORM.Entities
 {
     //Her departman bir fakülteye bağlı
-    public class Department
+    public class Department   : BaseEntity
     {
-        public int ID { get; set; }
 
         [Required]
         public string Name { get; set; }

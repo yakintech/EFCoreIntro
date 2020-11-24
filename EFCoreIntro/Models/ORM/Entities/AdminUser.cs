@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace EFCoreIntro.Models.ORM.Entities
 {
-    public class AdminUser
+    public class AdminUser : BaseEntity
     {
-        public int ID { get; set; }
 
         [MaxLength(100)]
         public string UserName { get; set; }

@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+@model EFCoreIntro.Models.ORM.Entities.Teacher
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <h1>Öğretmen Ekleme Formu</h1>
+
+    <form action="/Teacher/Add" method="post">
+
+        @await Html.PartialAsync("Partial/TeacherForm")
+        <div>
+            <button type="submit">Ekle</button>
+        </div>
+
+
+    </form>
+</body>
+</html>

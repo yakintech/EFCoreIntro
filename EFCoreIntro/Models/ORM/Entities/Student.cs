@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace EFCoreIntro.Models.ORM.Entities
 {
-    public class Student
+    public class Student : BaseEntity
     {
         //ID özel bir kelime. Bu sayede default olarak primarykey oluyor
-        public int ID { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
         public string EMail { get; set; }

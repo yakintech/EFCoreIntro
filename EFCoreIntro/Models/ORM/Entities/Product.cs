@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace EFCoreIntro.Models.ORM.Entities
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int UnitsInStock { get; set; }

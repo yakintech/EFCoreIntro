@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace EFCoreIntro.Models.ORM.Entities
 {
-    public class Course
+    public class Course  : BaseEntity
     {
-        public int ID { get; set; }
         public string Name { get; set; }
     }
 }
