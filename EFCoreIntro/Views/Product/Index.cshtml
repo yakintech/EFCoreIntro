@@ -34,6 +34,7 @@
             <td>Stock</td>
             <td>CategoryID</td>
             <td>İşlem</td>
+            <td>İşlem</td>
         </tr>
         @foreach (var item in Model)
         {
@@ -49,8 +50,8 @@
                         <button type="submit" style="background-color:tomato; color:white">Sil</button>
                     </form>*@
                     <a href="/Product/Delete2/@item.ID"><button>Sil</button></a>
-
                 </td>
+                <td><a href="/Product/Edit/@item.ID">Güncelle</a></td>
             </tr>
         }
     </table>

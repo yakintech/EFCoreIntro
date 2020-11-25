@@ -89,6 +89,18 @@ namespace EFCoreIntro.Controllers
 
             return RedirectToAction("Index");
         }   
+
+        public IActionResult Edit(int id)
+        {
+            List<Category> categories = _context.Categories.ToList();
+
+            ViewBag.CategoryList = categories;
+
+            //Product product = _context.Products.Find(id);
+            Product product = _context.Products.FirstOrDefault(x => x.ID == id);
+            return View(product);
+
+        }
     }
 
 }

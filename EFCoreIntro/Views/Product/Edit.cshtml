@@ -9,16 +9,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
+    <title>Edit Page</title>
 </head>
 <body>
-    <form action="/Product/Add" method="post">
+    <form action="/Product/Edit" method="post">
 
         @await Html.PartialAsync("Partial/ProductForm")
 
 
         <div>
-            <input type="submit" name="name" value="Kayıt" />
+            <input type="submit" name="name" value="Güncelle" />
         </div>
     </form>
 </body>
